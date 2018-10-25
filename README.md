@@ -10,3 +10,5 @@ The program is meant to be run from "Debug.py". By pressing 'g' when the window 
 The Weapon Class inherits from the Item Class, both of which are located in the Classes.py file
 
 The Helper.py file contains various constants and tuples with names and qualities to be used by the Weapon generator
+
+The Resources folder contains the 3 base textures to be manipulated by the program: Blade.png, Bonus.png and Handle.png
