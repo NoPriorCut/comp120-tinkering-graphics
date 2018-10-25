@@ -3,80 +3,7 @@ import Helper
 import random
 import pygame
 
-screen_width = int(750 / 3)
-screen_height = int(1334 / 3)
-
-screen = pygame.display.set_mode((screen_width, screen_height))
-
-
-class Entity:
-    # index is used to keep track of entities
-    entity_index = 0  # Declaration of static Index
-    entity_alignment = ('Aggressive', 'Passive', 'Friendly')  # Declaration of static alignment for all Entities
-
-    def __init__(self):
-        subname = 'Entity' + str(Entity.entity_index)  # subname is a unique identifier that uses the index
-        name = 'Placeholder name'
-        index = Entity.entity_index  # Importing index into the Entity-specific variable
-
-        Entity.entity_index += 1  # Incrementing the index of all entities
-
-        on_encounter = False  # defining where the entity is encountered (by default, nowhere)
-        on_battle = False
-
-        alignment = Entity.entity_alignment[1]  # setting alignment to passive as a default
-
-        # To do: define states, as to specify what images and animations to incorporate into lists
-
-
-class Enemy(Entity):
-
-    @staticmethod
-    def generate_elemental_resists(element):
-        elemental_resists = []
-
-        return elemental_resists
-
-    def __init__(self):
-        Entity.__init__(self)
-
-
-class EnemyBoss(Enemy):
-
-    def __init__(self):
-        Enemy.__init__(self)
-
-
-# Classes used by Room type Objects
-
-
-class Room:
-    room_index = 0
-
-    def __init__(self):
-        Index = Room.room_index
-        Room.room_index += 1
-
-
-class RoomEncounter(Room):
-    def __init__(self):
-        Room.__init__(self)
-
-
-class RoomEnemy(Room):
-
-    def __init__(self):
-        Room.__init__(self)
-
-
-class RoomBoss(Room):
-
-    def __init__(self):
-        Room.__init__(self)
-
-
 # Classes used by Item type Objects
-
 
 class Item:
     item_index = 0
@@ -287,11 +214,3 @@ class Weapon(Item):
         self.modifiers = modifiers
         # Generation of name
         self.name = Weapon.generate_name(modifiers, weapon_type)
-
-
-def generate_weapon():  # Generates random weapons twice per second
-    weapon = Weapon()
-    print('Generated: ' + weapon.name)
-    screen.blit(weapon.weapon_texture, (0, 0))
-    pygame.display.flip()
-    # time.sleep(1.5)
